@@ -17,7 +17,7 @@ env:
 
 jobs:
   build-and-push-image:
-    if: !contains(github.repository, 'repository-template')
+    if: "!contains(github.repository, 'repository-template')"
 
     runs-on: ubuntu-latest
 
