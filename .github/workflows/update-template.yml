@@ -26,6 +26,7 @@ jobs:
 
       - name: Update
         run: |
+          git branch --list -a
           git branch -m release dummy
           git branch -m dev release
           git push -f origin release
