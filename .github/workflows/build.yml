@@ -26,7 +26,7 @@ permissions: {}
 
 jobs:
   hadolint:
-    if: "!contains(github.repository, 'repository-template')"
+    if: "!contains(github.repository, '.warriors-life-template')"
     name: Lint Dockerfile with Hadolint
     runs-on: ubuntu-latest
     permissions:
@@ -50,7 +50,7 @@ jobs:
           failure-threshold: style
 
   scorecard:
-    if: "!contains(github.repository, 'repository-template')"
+    if: "!contains(github.repository, '.warriors-life-template')"
     name: Check supply chain with Scorecard
     runs-on: ubuntu-latest
     permissions:
@@ -86,7 +86,7 @@ jobs:
           path: results.sarif
 
   metadata:
-    if: "!contains(github.repository, 'repository-template')"
+    if: "!contains(github.repository, '.warriors-life-template')"
     name: Get Docker image metadata
     runs-on: ubuntu-latest
     outputs:
