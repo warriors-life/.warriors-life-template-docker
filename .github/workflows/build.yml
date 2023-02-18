@@ -79,7 +79,7 @@ jobs:
           results_file: results.sarif
           results_format: sarif
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-      - name: Upload artifact
+      - name: Upload output
         uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb
         with:
           name: Scorecard output
@@ -149,10 +149,10 @@ jobs:
           cache-to: type=gha,mode=max
           outputs: type=docker,dest=/tmp/image.tar
           labels: ${{ needs.metadata.outputs.labels }}
-      - name: Upload artifact
+      - name: Upload Docker image
         uses: actions/upload-artifact@83fd05a356d7e2593de66fc9913b3002723633cb
         with:
-          name: Image
+          name: Docker image
           path: /tmp/image.tar
 
   snyk:
@@ -167,10 +167,10 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             api.snyk.io:443
-      - name: Download artifact
+      - name: Download Docker image
         uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7
         with:
-          name: Image
+          name: Docker image
           path: /tmp
       - name: Load image
         run: docker load --input /tmp/image.tar
@@ -196,10 +196,10 @@ jobs:
           egress-policy: block
           allowed-endpoints: >
             ghcr.io:443
-      - name: Download artifact
+      - name: Download Docker image
         uses: actions/download-artifact@9782bd6a9848b53b110e712e20e42d89988822b7
         with:
-          name: Image
+          name: Docker image
           path: /tmp
       - name: Load image
         run: docker load --input /tmp/image.tar
