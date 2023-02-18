@@ -2,7 +2,7 @@
 # TODO: cache actions/checkout's output
 # TODO: use SARIF and github/codeql-action/upload-sarif when we'll move to GitHub Advanced Security
 
-name: Build, test, and push Docker image
+name: Build
 
 on:
   push:
