@@ -12,6 +12,9 @@ LICENSE         text
 
 *.md            text diff=markdown
 
+Dockerfile      text
+.dockerignore   text
+
 *.yml           text
 
 .gitattributes  export-ignore

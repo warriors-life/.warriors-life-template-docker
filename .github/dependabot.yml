@@ -4,3 +4,8 @@ updates:
     directory: "/test"
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "docker"
+    directory: "/src"
+    schedule:
+      interval: "daily"
