@@ -17,6 +17,10 @@ Dockerfile      text
 
 *.yml           text
 
+*.js            text
+
+*.json          text
+
 .gitattributes  export-ignore
 .gitignore      export-ignore
 .gitkeep        export-ignore
