@@ -21,6 +21,9 @@ jobs:
       image-name: ${{ github.repository }}
     secrets: inherit
     permissions:
+      security-events: write
+      packages: write
       actions: read
       contents: read
-      packages: write
+      issues: read
+      pull-requests: read
